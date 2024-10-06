@@ -1,5 +1,6 @@
 package com.ulpsoft.tp1loginsharedpreferences.ui.login;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private MainActivityViewModel mv;
+    private Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent =new Intent(MainActivity.this, RegistroActivity.class);
+                intent.putExtra("esRegistro", true);  // Enviar un boolean para indicar registro
                 startActivity(intent);
             }
         });

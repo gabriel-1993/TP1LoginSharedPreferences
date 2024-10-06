@@ -25,9 +25,10 @@ public class MainActivityViewModel extends AndroidViewModel {
 
         Usuario usuarioEncontrado = ApiClient.login(context, mail, password);
 
-        System.out.println("Usuario encontrado: " + usuarioEncontrado);
         if(usuarioEncontrado != null){
             Intent intent = new Intent(context, RegistroActivity.class);
+            intent.putExtra("esRegistro", false);  // Enviar el mismo boolean para que exista en ambos casos
+            intent.putExtra("usuario", usuarioEncontrado);  // Enviar el objeto Usuario
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         }else{

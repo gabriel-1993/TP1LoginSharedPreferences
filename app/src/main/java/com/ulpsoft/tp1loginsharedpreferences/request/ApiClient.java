@@ -51,7 +51,7 @@ public class ApiClient {
      Long dni = sp.getLong("dni",-1);
      String apellido = sp.getString("apellido","-1");
      String nombre = sp.getString("nombre","-1");
-     String email = sp.getString("email", "-1");
+     String email = sp.getString("mail", "-1");
      String pass = sp.getString("password","-1");
 
      if(mail.equals(email) && password.equals(pass)){
